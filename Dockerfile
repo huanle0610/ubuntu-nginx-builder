@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-#COPY sources.list /etc/apt/sources.list
+COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get build-dep nginx \

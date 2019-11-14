@@ -4,6 +4,7 @@ COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get -y  build-dep nginx \
+    && apt-get install -y wget \
     && cd /usr/src \
     && wget -c -O libmaxminddb.tar.gz https://github.com/maxmind/libmaxminddb/releases/download/1.4.2/libmaxminddb-1.4.2.tar.gz \
     && tar xf libmaxminddb.tar.gz \

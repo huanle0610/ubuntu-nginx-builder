@@ -21,7 +21,7 @@ RUN apt-get update \
     && wget -c -O nginx.tar.gz http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz \
     && tar xf nginx.tar.gz \
     && cd nginx-$NGINX_VERSION \
-    && ./configure $NGINX_BUILD_ARGS \
+    && ./configure "$NGINX_BUILD_ARGS" \
         --add-dynamic-module=../ngx_http_geoip2_module-$NGX_HTTP_GEOIP2_MODULE_VERSION \
     && make \
     && ls objs/*.so | xargs readlink -f \
